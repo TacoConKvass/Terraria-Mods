@@ -1,0 +1,3 @@
+displayName = Chainsawman Transformation
+author = TacoConKvass
+version = 0.1

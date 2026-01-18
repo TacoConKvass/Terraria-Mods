@@ -1,0 +1,14 @@
+Mods: {
+	CSM_Mod: {
+		"Keybinds.CSM Transformation.DisplayName": CSM Transformation
+
+		Items: {
+			PocheetosItem: {
+				DisplayName: Pochita
+				Tooltip: Press {0} to activate Chainsaw Man transformation
+			}
+		}
+
+		NPCs.Pocheetos.DisplayName: Pochita
+	}
+}
