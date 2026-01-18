@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Import tModLoader mod properties -->
+	<Import Project="..\..\tModLoader.targets" />
+
+	<!-- General -->
+	<PropertyGroup>
+		
+	</PropertyGroup>
+
+	<!-- References -->
+	<ItemGroup>
+	  <None Remove="Content\DarkConquerersPlate_Alt_Back.png" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+Items: {
+	DarkConquerersMask: {
+		DisplayName: Dark Conquerers Mask
+		Tooltip: "{$CommonItemTooltip.PercentIncreasedDamage}"
+	}
+
+	DarkConquerersPlate: {
+		DisplayName: Dark Conquerers Plate
+		Tooltip: "{$CommonItemTooltip.PercentIncreasedDamage}"
+	}
+
+	DarkConquerersPlate_Alt: {
+		DisplayName: Dark Conquerers Plate
+		Tooltip: "{$CommonItemTooltip.PercentIncreasedDamage}"
+	}
+
+	DarkConquerersPresence: {
+		DisplayName: Dark Conquerers Presence
+		Tooltip: "{$CommonItemTooltip.FlightAndSlowfall}"
+	}
+
+	DarkConquerersSabatons: {
+		DisplayName: Dark Conquerers Sabatons
+		Tooltip: "{$CommonItemTooltip.PercentIncreasedDamage}"
+	}
+}

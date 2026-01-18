@@ -1,0 +1,3 @@
+displayName = Dark Conqueror's Set
+author = TacoConKvass
+version = 1.0.1
