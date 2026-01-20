@@ -1,14 +1,11 @@
-using Terraria.Localization;
+using Humanizer;
 using TML = Terraria.ModLoader;
 using Xna = Microsoft.Xna.Framework;
 
 namespace CSM_Mod.Content;
 
-public class PocheetosItem : TML.ModItem
-{
+public class PocheetosItem : TML.ModItem {
 	public override string Texture => "CSM_Mod/Assets/PocheetosItem";
-
-	public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs(Common.CSM_Transformation.Keybinds.Transformation);
 
 	public override void SetDefaults() {
 		Item.Size = new Xna.Vector2();
@@ -18,21 +15,30 @@ public class PocheetosItem : TML.ModItem
 	public override void UpdateEquip(Terraria.Player player) {
 		player.GetModPlayer<Common.CSM_Transformation>().Available = true;
 	}
+
+	public override void ModifyTooltips(System.Collections.Generic.List<TML.TooltipLine> tooltips) {
+		foreach (var tooltip in tooltips) {
+			string keybind = string.Join("or", Common.Keybinds.Transformation.GetAssignedKeys());
+			tooltip.Text = tooltip.Text.FormatWith(keybind);
+		}
+	}
 }
 
 public class Pocheetos : TML.ModNPC
 {
 	public override string Texture => "CSM_Mod/Assets/Pocheetos";
-	static int spawnCount = 0;
 
 	public override void SetStaticDefaults() {
 		Terraria.Main.npcFrameCount[Type] = 4;
+		Terraria.ID.NPCID.Sets.CountsAsCritter[Type] = true;
 	}
 
 	public override void SetDefaults() {
 		NPC.lifeMax = 200;
 		NPC.Size = new Xna.Vector2(45, 30);
 		NPC.lavaImmune = true;
+		NPC.rarity = 5;
+		NPC.immortal = true;
 
 		NPC.aiStyle = Terraria.ID.NPCAIStyleID.Passive;
 		AIType = Terraria.ID.NPCID.Bunny;
@@ -51,17 +57,12 @@ public class Pocheetos : TML.ModNPC
 	}
 
 	public override float SpawnChance(TML.NPCSpawnInfo spawnInfo) {
-		return spawnCount < 1 && spawnInfo.SpawnTileY < Terraria.Main.maxTilesY * Terraria.Main.UnderworldLayer && Terraria.Main.hardMode ? 0.1f : 0;
+		foreach (Terraria.NPC npc in Terraria.Main.ActiveNPCs) {
+			if (npc.type == Type) return 0;
+		}
+
+		return spawnInfo.SpawnTileY < Terraria.Main.maxTilesY * Terraria.Main.UnderworldLayer && Terraria.Main.hardMode ? 0.1f : 0;
 	}
 
 	public override bool? CanBeCaughtBy(Terraria.Item item, Terraria.Player player) => true;
-	
-	public override int SpawnNPC(int tileX, int tileY) {
-		spawnCount++;
-		return base.SpawnNPC(tileX, tileY);
-	}
-
-	public override void OnCaughtBy(Terraria.Player player, Terraria.Item item, bool failed) { spawnCount--; }
-
-	public override void OnKill() { spawnCount--; }
 }
