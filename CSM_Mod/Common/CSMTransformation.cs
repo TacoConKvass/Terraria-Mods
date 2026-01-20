@@ -7,21 +7,20 @@ using Collections = System.Collections.Generic;
 
 namespace CSM_Mod.Common;
 
-public class CSM_Transformation : TML.ModPlayer {
-	public class Keybinds : TML.ModSystem
-	{
-		public static TML.ModKeybind Transformation;
+public class Keybinds : TML.ModSystem
+{
+	public static TML.ModKeybind Transformation;
 
-		public override void Load() {
-			Transformation = TML.KeybindLoader.RegisterKeybind(Mod, "CSM Transformation", Xna.Input.Keys.K);
-		}
-
-		public override void Unload() {
-			Transformation = null;
-		}
+	public override void Load() {
+		Transformation = TML.KeybindLoader.RegisterKeybind(Mod, "CSM_Transformation", Xna.Input.Keys.K);
 	}
 
+	public override void Unload() {
+		Transformation = null;
+	}
+}
 
+public class CSM_Transformation : TML.ModPlayer {
 	public bool Available;
 	public int BloodMeter;
 
@@ -291,7 +290,7 @@ public class CSM_Layers {
 			Terraria.Player player = drawInfo.drawPlayer;
 			Xna.Color color = player.immune ? Xna.Color.White with { A = (byte)player.immuneAlpha } : Xna.Color.White;
 
-			// Taken from https://github.com/Mr-Plauge/MrPlagueRaces-1.4/
+			// Taken from https://github.com/Mr-Plauge/MrPlagueRaces-1.4/ and tweaked a bit
 			// Let's assume it's correct :D
 			Xna.Vector2 headPosition = new Xna.Vector2(
 				(int)(drawInfo.Position.X - Terraria.Main.screenPosition.X - (player.bodyFrame.Width / 2) + (player.width / 2)), 
