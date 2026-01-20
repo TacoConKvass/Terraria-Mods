@@ -49,6 +49,7 @@ public class Pocheetos : TML.ModNPC
 	public override void PostAI() {
 		NPC.frameCounter += (NPC.velocity.X > 0 ? 1 : 0);
 		NPC.spriteDirection = -NPC.direction;
+		if (NPC.lavaWet) NPC.velocity.Y = -3f;
 	}
 
 	public override void FindFrame(int frameHeight) {
