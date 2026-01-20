@@ -282,9 +282,11 @@ public class CSM_Layers {
 
 		public override void Unload() => HeadTexture = null;
 
-		public override Position GetDefaultPosition() => new AfterParent(DataStructures.PlayerDrawLayers.Head);
+		public override Position GetDefaultPosition() => new BeforeParent(DataStructures.PlayerDrawLayers.ArmOverItem);
 
 		public override bool GetDefaultVisibility(DataStructures.PlayerDrawSet drawInfo) => drawInfo.drawPlayer.GetModPlayer<CSM_Transformation>().BloodMeter > 0;
+
+		public override bool IsHeadLayer => false;
 
 		protected override void Draw(ref DataStructures.PlayerDrawSet drawInfo) {
 			Terraria.Player player = drawInfo.drawPlayer;
