@@ -1,6 +1,8 @@
 Mods: {
 	CSM_Mod: {
-		"Keybinds.CSM Transformation.DisplayName": CSM Transformation
+		Keybinds: {
+			CSM_Transformation.DisplayName: CSM Transformation
+		}
 
 		Items: {
 			PocheetosItem: {
