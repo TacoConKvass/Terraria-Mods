@@ -16,18 +16,19 @@ using Terraria.ID;
 namespace CalamityVanillaDodge;
 
 public class CalamityVanillaDodge : Mod {
-	public ILHook[] ILHookList = [
-		Cal_CounterScarfChance,
-		Cal_ConsumableDodge,
-		RemoveCooldownAdd("CounterScarfDodge", 3, BindingFlags.NonPublic | BindingFlags.Instance),
+	public static ILHook[] ILHookList = [
+		RemoveCooldownAdd("CounterScarfDodge", 4, BindingFlags.NonPublic | BindingFlags.Instance),
 		RemoveCooldownAdd("EclipseMirrorDodge", 4),
-		RemoveCooldownAdd("AbyssMirrorDodge", 4)
+		RemoveCooldownAdd("AbyssMirrorDodge", 4),
 	];
-	
+
 	public override void Load() {
+		Cal_CounterScarfChance.Apply();
+		Cal_ConsumableDodge.Apply();
 		foreach (ILHook hook in ILHookList) hook.Apply();
 		Cal_VanillaDodgeTooltips.Apply();
-		IL_Player.Hurt_PlayerDeathReason_int_int_refHurtInfo_bool_bool_int_bool_float_float_float -= ILChanges.DodgeMechanicAdjustments;
+		DisableDodgeMechanicAdjustments.Apply();
+		// IL_Player.Hurt_PlayerDeathReason_int_int_refHurtInfo_bool_bool_int_bool_float_float_float -= ILChanges.DodgeMechanicAdjustments;
 		IL_Player.Hurt_PlayerDeathReason_int_int_refHurtInfo_bool_bool_int_bool_float_float_float += (ILContext il) => {
 			ILCursor cursor = new ILCursor(il);
 			if (!cursor.TryGotoNext(MoveType.After, i => i.MatchCall<Player.HurtModifiers>("ToHurtInfo"))) return;
@@ -40,9 +41,18 @@ public class CalamityVanillaDodge : Mod {
 	}
 
 	public override void Unload() {
+		Cal_CounterScarfChance.Undo();
+		Cal_ConsumableDodge.Undo();
 		foreach (ILHook hook in ILHookList) hook.Undo();
 		Cal_VanillaDodgeTooltips.Undo();
+		DisableDodgeMechanicAdjustments.Undo();
 	}
+
+	public static Hook DisableDodgeMechanicAdjustments = new Hook(
+
+		typeof(ILChanges).GetMethod(nameof(ILChanges.DodgeMechanicAdjustments), BindingFlags.NonPublic | BindingFlags.Static),
+		(Action<ILContext> orig, ILContext il) => {}
+	);
 
 	public static ILHook Cal_ConsumableDodge = new ILHook(
 		typeof(CalamityPlayer).GetMethod("ConsumableDodge", BindingFlags.Public | BindingFlags.Instance),
