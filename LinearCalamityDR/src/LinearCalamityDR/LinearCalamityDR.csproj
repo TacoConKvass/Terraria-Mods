@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Import tModLoader mod properties -->
+	<Import Project="..\..\..\tModLoader.targets" />
+
+	<!-- General -->
+	<PropertyGroup>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<!-- References -->
+	<ItemGroup>
+		<Reference Include="../../../ModAssemblies/CalamityMod.dll"/>
+	</ItemGroup>
+</Project>
