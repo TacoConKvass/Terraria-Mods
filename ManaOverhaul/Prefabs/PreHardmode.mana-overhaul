@@ -1,0 +1,203 @@
+// NPCs : {
+//     SkeletronHead: {
+//         AppliesManaDrain: {
+// 			Ticks: 5
+//             ManaPerInterval: 4
+//             Interval: 12
+//         }
+//         Resists: {
+//             ManaDrain: 0.5
+//         }
+//     }
+//     SkeletronHand: {
+//         Resists: {
+//             ManaDrain: 0.5
+//         }
+//     }
+// }
+Items: {
+	IronBroadsword: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.4]
+			ScaleBoosts: [0.22]
+		}
+	}
+	IronAxe: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.5]
+			ScaleBoosts: [0.18]
+		}
+	}
+	LightsBane: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.3, 0.4]
+			ScaleBoosts: [0.24, 0.39]
+		}
+	}
+	WarAxeoftheNight: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.3, 0.5]
+			ScaleBoosts: [0.22, 0.29]
+		}
+	}
+	FieryGreatsword: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.4, 0.5]
+			ScaleBoosts: [0.22, 0.28]
+		}
+	}
+	NightsEdge: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.3, 0.4]
+			ScaleBoosts: [0.26, 0.34]
+		}
+		AppliesManaDrain: {
+			Ticks: 10
+            ManaPerInterval: 5
+            Interval: 10
+		}
+	}
+	BladeofGrass: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.5]
+			ScaleBoosts: [0.27]
+		}
+	}
+	BeeKeeper: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.3, 0.4]
+			ScaleBoosts: [0.24, 0.35]
+		}
+	}
+	BloodButcherer: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.3, 0.4]
+			ScaleBoosts: [0.18, 0.33]
+		}
+	}
+	Muramasa: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.2, 0.4, 0.6]
+			ScaleBoosts: [0.15, 0.17, 0.33]
+		}
+	}
+	CactusSword: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.3]
+			ScaleBoosts: [0.3]
+		}
+	}
+	ZombieArm: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.2, 0.4]
+			ScaleBoosts: [0.18, 0.39]
+		}
+	}
+	StylistKilLaKillScissorsIWish: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.5]
+			ScaleBoosts: [0.31]
+		}
+	}
+	BatBat: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.3]
+			ScaleBoosts: [0.14]
+		}
+	}
+	TentacleSpike: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.2, 0.3]
+			ScaleBoosts: [0.19, 0.25]
+		}
+	}
+	RedPhaseblade: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.2, 0.3]
+			ScaleBoosts: [0.36, 0.38]
+		}
+	}
+	BluePhaseblade: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.2, 0.5, 0.6]
+			ScaleBoosts: [0.17, 0.17, 0.19]
+		}
+	}
+	OrangePhaseblade: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.2, 0.3]
+			ScaleBoosts: [0.2, 0.26]
+		}
+	}
+	WhitePhaseblade: {
+		ChangeScaleWithMana: { 
+			Thresholds: [0.3, 0.4]
+			ScaleBoosts: [0.25, 0.36]
+		}
+	}
+    Excalibur: {
+        AppliesManaDrain: {
+			Ticks: 12
+            ManaPerInterval: 8
+            Interval: 10
+		}
+    }
+    TrueExcalibur: {
+        AppliesManaDrain: {
+			Ticks: 15
+            ManaPerInterval: 9
+            Interval: 10
+		}
+    }
+    TrueNightsEdge: {
+        AppliesManaDrain: {
+			Ticks: 15
+            ManaPerInterval: 10
+            Interval: 10
+		}
+    }
+    TerraBlade: {
+        AppliesManaDrain: {
+			Ticks: 20
+            ManaPerInterval: 15
+            Interval: 5
+		}
+    }
+}
+Projectiles: {
+    NightsEdge: {
+		AppliesManaDrain: {
+			Ticks: 10
+            ManaPerInterval: 5
+            Interval: 10
+		}
+	}
+    Excalibur: {
+        AppliesManaDrain: {
+			Ticks: 12
+            ManaPerInterval: 8
+            Interval: 10
+		}
+    }
+    TrueExcalibur: {
+        AppliesManaDrain: {
+			Ticks: 15
+            ManaPerInterval: 9
+            Interval: 10
+		}
+    }
+    TrueNightsEdge: {
+        AppliesManaDrain: {
+			Ticks: 15
+            ManaPerInterval: 10
+            Interval: 10
+		}
+    }
+    TerraBlade2: {
+        AppliesManaDrain: {
+			Ticks: 20
+            ManaPerInterval: 15
+            Interval: 5
+		}
+    }
+}

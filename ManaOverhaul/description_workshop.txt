@@ -1,0 +1,16 @@
+This mod aims to freshen up the gameplay of the mage class, by changing how players acquire mana.
+
+[list]
+    [*] No natural mana regen
+    [*] No mana stars
+    [*] All mana potions are disbaled
+    [*] All melee strikes inflict enemies with Mana Drain
+    [*] All true melee weapons get bigger at certian mana thresholds - this allows for easier mana acquisition from melee strikes
+[/list]
+
+[url=https://buymeacoffee.com/tacoconkvass] Support us [/url]
+
+[url=https://github.com/TacoConKvass/ManaOverhaul] Check out the mods GitHub repository [/url]
+
+[h2] All the changes in the mod are data driven [/h2]
+If you are a modder and want to add you items to the system, visit [url=https://github.com/TacoConKvass/ManaOverhaul/wiki] our wiki [/url] to learn how.

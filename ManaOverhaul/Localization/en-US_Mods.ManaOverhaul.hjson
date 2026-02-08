@@ -1,0 +1,3 @@
+ManaPotionOverhaul: ""
+ChangeScaleWithMana: Grows in size by additional {0}% when the player is below {1}% mana
+AppliesManaDrain: Applies Mana Drain. After hitting an enemy, you regain {0} mana, over {1}

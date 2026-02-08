@@ -1,0 +1,8 @@
+This mod aims to freshen up the gameplay of the mage class, by changing how players acquire mana.
+
+- No natural mana regen
+- No mana stars
+- All mana potions are disbaled
+- All melee strikes inflict enemies with Mana Drain
+- All true melee weapons get bigger at certian mana thresholds
+	- This allows for easier mana acquisition from melee strikes
